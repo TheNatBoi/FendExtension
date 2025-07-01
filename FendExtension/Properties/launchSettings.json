@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "FendExtension (Package)": {
+      "commandName": "MsixPackage",
+      "doNotLaunchApp": true
+    },
+    "FendExtension (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
