@@ -15,23 +15,48 @@ namespace FendExtension;
 internal sealed partial class FendExtensionPage : DynamicListPage
 {
     private readonly Lock _resultsLock = new();
-    //private readonly SettingsManager _settingsManager;
-    private readonly List<ListItem> _items = [new ListItem(new AnonymousCommand(null) { Result = CommandResult.KeepOpen() }) { Title = "Keep the palette open" }];
+    private List<ListItem> _items = [];
     private readonly List<ListItem> history = [];
     private ListItem _item;
     private string query;
 
     public FendExtensionPage()
     {
-        Icon = new IconInfo(string.Empty);
+        Icon = new IconInfo("https://raw.githubusercontent.com/printfn/fend/main/icon/icon.svg");
         Title = "Fend";
-        Name = "Open UP";
+        Name = "Open";
         query = SearchText; 
     }
 
     public override IListItem[] GetItems()
     {
-        return [new ListItem(new PromptCommand(InvokeFend()) { })];
+        if (string.IsNullOrEmpty(SearchText))
+        {
+            if (_items == null)
+            {
+                return [];
+            }
+            return _items.ToArray();
+        }
+        else if (string.IsNullOrEmpty(InvokeFend()))
+        {
+            if (_items == null)
+            {
+                return [];
+            }
+            return _items.ToArray();
+        }
+        else
+        {
+            return [
+            new ListItem(new CopyTextCommand(InvokeFend()) { Result = CommandResult.ShowToast("Copied to clipboard") })
+            {
+                Title = InvokeFend(),
+                Subtitle = "Copy result to clipboard",
+                Icon = new IconInfo("https://raw.githubusercontent.com/printfn/fend/main/icon/icon.svg")
+            }
+            ];
+        }
     }
 
     public string InvokeFend()

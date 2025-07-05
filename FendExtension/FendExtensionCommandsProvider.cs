@@ -11,16 +11,14 @@ namespace FendExtension;
 public partial class FendExtensionCommandsProvider : CommandProvider
 {
     private readonly ICommandItem[] _commands;
-
+    
     public FendExtensionCommandsProvider()
     {
         DisplayName = "Fend";
-        Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
+        Icon = IconHelpers.FromRelativePath("https://raw.githubusercontent.com/printfn/fend/main/icon/icon.svg");
         _commands = [
             new CommandItem(new FendExtensionPage()) { Title = DisplayName },
-            //new CommandItem(
-            //    title: "Fend Settings",
-            //    action: )
+            new CommandItem(new ListPage()) { Title = "Settings" }
         ];
     }
 
