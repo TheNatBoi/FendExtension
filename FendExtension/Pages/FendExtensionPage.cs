@@ -63,7 +63,7 @@ internal sealed partial class FendExtensionPage : DynamicListPage
     {
         ProcessStartInfo psi = new ProcessStartInfo
         {
-            FileName = "C:\\Program Files\\fend\\bin\\fend.exe",
+            FileName = "fend.exe",
             Arguments = SearchText,
             UseShellExecute = false,
             RedirectStandardOutput = true,
