@@ -1,4 +1,4 @@
 # FendExtension
-An extension for integrating [Fend](https://printfn.github.io/fend/)with [Powertoys Command Palette](https://github.com/microsoft/PowerToys/tree/main/src/modules/cmdpal). Inspiration taken from [a similar implementation for Flow launcher](https://github.com/IsaacTay/Flow.Launcher.Plugin.FendCalculator).
+An extension for integrating [Fend](https://printfn.github.io/fend/) with [Powertoys Command Palette](https://github.com/microsoft/PowerToys/tree/main/src/modules/cmdpal). Inspiration taken from [a similar implementation for Flow Launcher](https://github.com/IsaacTay/Flow.Launcher.Plugin.FendCalculator).
 ## Installation
 Fend must be installed separately and must be in the path to work. You can install it via [winget](https://winget.run/pkg/printfn/fend), [scoop](https://scoop.sh/#/apps?id=e6f0a9d6e20f46ef6481143944e6bb44fb766fb4&q=fend), [chocolatey](https://community.chocolatey.org/packages/fend), [the official msi](https://github.com/printfn/fend/releases/latest/download/fend-windows-x64.msi), or [a portable exe](https://github.com/printfn/fend/releases/tag/v1.1.6).
