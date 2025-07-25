@@ -4,14 +4,13 @@
 
 using Microsoft.CommandPalette.Extensions;
 using Microsoft.CommandPalette.Extensions.Toolkit;
-using Windows.Web.Http.Filters;
 
 namespace FendExtension;
 
 public partial class FendExtensionCommandsProvider : CommandProvider
 {
     private readonly ICommandItem[] _commands;
-    
+
     public FendExtensionCommandsProvider()
     {
         DisplayName = "Fend";

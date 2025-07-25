@@ -2,9 +2,9 @@
 // The Microsoft Corporation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using FendExtension.Commands;
 using Microsoft.CommandPalette.Extensions;
 using Microsoft.CommandPalette.Extensions.Toolkit;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -25,7 +25,7 @@ internal sealed partial class FendExtensionPage : DynamicListPage
         Icon = new IconInfo("https://raw.githubusercontent.com/printfn/fend/main/icon/icon.svg");
         Title = "Fend";
         Name = "Open";
-        query = SearchText; 
+        query = SearchText;
     }
 
     public override IListItem[] GetItems()
@@ -61,9 +61,10 @@ internal sealed partial class FendExtensionPage : DynamicListPage
 
     public string InvokeFend()
     {
+        string exePath = Path.Combine(AppContext.BaseDirectory, "fend", "fend.exe");
         ProcessStartInfo psi = new ProcessStartInfo
         {
-            FileName = "fend.exe",
+            FileName = exePath,
             Arguments = SearchText,
             UseShellExecute = false,
             RedirectStandardOutput = true,

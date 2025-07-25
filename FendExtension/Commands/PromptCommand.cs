@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.CommandPalette.Extensions;
-using Microsoft.CommandPalette.Extensions.Toolkit;
-using Microsoft.UI.Windowing;
+﻿using Microsoft.CommandPalette.Extensions.Toolkit;
 
 
 namespace FendExtension.Commands
